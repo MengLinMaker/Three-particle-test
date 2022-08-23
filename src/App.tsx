@@ -3,7 +3,7 @@ import './App.scss'
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import * as THREE from 'three'
-import { OrbitControls, Stats } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera, Stats } from '@react-three/drei'
 import { BufferAttribute, Vector3 } from 'three'
 
 
@@ -15,6 +15,7 @@ function App() {
     <section className="canvas">
       <Canvas>
         <Stats/>
+        <PerspectiveCamera makeDefault fov={45} position={[4,4,4]}/>
         <AnimatedPoints count={100}/>
         <BufferPoints count={10e4}/>
         <OrbitControls />
